@@ -8,7 +8,7 @@ export ZSH="/Users/myl/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="af-magic"
+ZSH_THEME="myl"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +68,10 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    git-prompt
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +105,7 @@ eval "$(rbenv init -)"
 
 export PATH="/usr/local/opt/mysql-client@5.7/bin:$PATH"
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# -DCMAKE_TOOLCHAIN_FILE=/Users/myl/vcpkg/scripts/buildsystems/vcpkg.cmake

@@ -1,12 +1,9 @@
 # GO
 export GOPATH=$HOME/go
-export PATH=/usr/local/bin:$GOPATH/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH
 
 # Homebrew
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-
-# Java
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 # Antlr
 export CLASSPATH=.:/usr/local/lib/antlr-4.7.2-complete.jar
@@ -38,7 +35,9 @@ alias tunnelblick='totp && osascript -e "tell application \"/Applications/Tunnel
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-export RUST_LOG=debug
+
+# rust
+export RUST_LOG=info
 
 # jenv
 export PATH="/Users/myl/.jenv/shims:${PATH}"
@@ -61,3 +60,12 @@ jenv() {
   esac
 }
 
+# fzf
+fzfp() {
+    fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (rougify {} || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'
+}
+
+alias pp='fzf --preview '"'"'[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"'"
+
+# cppbuild
+export PATH=$PATH:$HOME/.cppbuild

@@ -81,16 +81,17 @@ let g:ycm_error_symbol = '>>'
 
 let g:go_fmt_command = "goimports"
 
-" nerdtree
-let g:NERDTreeWinPos = "left"
-autocmd vimenter * NERDTree
-nmap <C-n> :NERDTreeToggle<CR>
-nmap <C-m> :NERDTreeFind<CR>
 nmap <leader>gd <C-w>]
 nnoremap <C-\> <C-w>T
 nnoremap <C-q> :q<CR>
 nnoremap <C-s> :w<CR>
 noremap <leader>n :set number!<CR>
+noremap <leader>s :shell<CR>
+
+" nerdtree
+let g:NERDTreeWinPos = "left"
+noremap <C-n> :NERDTreeToggle<CR>
+" nnoremap <C-m> :NERDTreeFind<CR>
 let g:NERDTreeMouseMode=3
 let g:rustfmt_autosave = 1
 
